@@ -6,7 +6,7 @@ task :default => :spec
 
 desc "run tests for this lab"
 RSpec::Core::RakeTask.new do |task|
-  lab = Rake.application.original_dir
+  lab = Rake.application.original_dir.gsub(' ', '\ ')
   task.pattern = "#{lab}/*_spec.rb"
   task.rspec_opts = [ "-I#{lab}", "-I#{lab}/solution", '-f documentation', '-r ./rspec_config']
   task.verbose = false

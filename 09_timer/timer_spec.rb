@@ -18,7 +18,7 @@ describe "Timer" do
     @timer.seconds.should == 0
   end
 
-  describe 'time_string' do
+   describe 'time_string' do
     it "should display 0 seconds as 00:00:00" do
       @timer.seconds = 0
       @timer.time_string.should == "00:00:00"
